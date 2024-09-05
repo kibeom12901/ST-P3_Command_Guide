@@ -96,13 +96,13 @@ Planning takes approximately one week, and the results are critical for subseque
 
 **2.** Run Evaluation:
 
--Recommended:
+- Recommended:
 
 
     bash scripts/eval_plan.sh ${checkpoint} ${dataroot}
     
 
--Executed command:
+- Executed command:
 
     
     bash scripts/eval_plan.sh ST-P3/tensorboard_logs/17September2024at18_15_56KST_SimulationPC_Prediction data/Nuscenes
@@ -128,13 +128,13 @@ This process also takes about a week.
 
 **2.** Planning with Prediction Results:
 
--Recommended:
+- Recommended:
 
 
     bash scripts/eval_plan.sh ${checkpoint} ${dataroot}
 
     
--Executed command:
+- Executed command:
 
 
     bash scripts/eval_plan.sh ST-P3/tensorboard_logs/17September2024at18_15_56KST_SimulationPC_Prediction data/Nuscenes
