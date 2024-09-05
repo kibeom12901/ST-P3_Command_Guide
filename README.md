@@ -2,20 +2,25 @@
 
 ### Initial Setup
 - **1.** Clone the Repository:
+          ```bash
           git clone https://github.com/OpenDriveLab/ST-P3.git
+          ```
 - **2.**  Create and Activate Conda Environment:
-            - Create a Conda environment named `st-p3`:
-              conda env create -f environment.yml -n st-p3
+  - Create a Conda environment named `st-p3`:
+    ```bash
+    conda env create -f environment.yml -n st-p3
+    ```
+  - Activate the environment:
+    ```bash
+    conda activate st-p3
+    ```
 
-            - Activate the environment:
-              conda activate st-p3
-
-- **2.**  Prepare Data Directory:
-          - Create a directory path `ST-P3/data/Nuscenes`.
-          - Download the following data from nuscenes.org/download into the Nuscenes directory:
-              - Metadata [US, Asia] (0.43 GB)
-              - File blobs of 85 scenes, parts 1-10 [US, Asia] (totals ~284.17 GB)
-              - Map and CAN bus expansion packs [US, Asia]
+- **3.**  Prepare Data Directory:
+  - Create a directory path `ST-P3/data/Nuscenes`.
+  - Download the following data from nuscenes.org/download into the Nuscenes directory:
+    - Metadata [US, Asia] (0.43 GB)
+    - File blobs of 85 scenes, parts 1-10 [US, Asia] (totals ~284.17 GB)
+    - Map and CAN bus expansion packs [US, Asia]
 
 ### Configuration Adjustments
 
