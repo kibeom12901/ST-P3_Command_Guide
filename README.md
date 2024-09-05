@@ -20,15 +20,17 @@
 
 **3.** Prepare Data Directory:
   - Create a directory path `ST-P3/data/Nuscenes`.
-  
-  - Download the following data from nuscenes.org/download into the Nuscenes directory:
+
+  - Download the following data [from this website](nuscenes.org/download) into the Nuscenes directory:
 
     - `Metadata [US, Asia] (0.43 GB)`
 
     - `File blobs of 85 scenes, parts 1-10 [US, Asia] (totals ~284.17 GB)`
 
     - `Map and CAN bus expansion packs [US, Asia]`
-   
+
+    <img width="624" alt="Screenshot 2024-09-05 at 5 08 08 PM" src="https://github.com/user-attachments/assets/af62bdde-99fe-4dbf-aeb5-a152485f7a77">
+    
     This process may take up to 2 days due to the size of the files.
 
 ### Configuration Adjustments
@@ -37,9 +39,12 @@ Modify Configuration Files:
 
   - Navigate to `ST-P3/stp3/configs/nuscenes/Perception.yml`
 
+    <img width="622" alt="Screenshot 2024-09-05 at 5 10 20 PM" src="https://github.com/user-attachments/assets/706c48cd-c2d3-4824-a1bf-2e35a34d80cd">
+
   - Adjust the GPUs configuration from `GPUS: [0,1,2,3,4]` to `GPUS: [0]` due to using a single GPU (RTX 4090).
 
   - Optionally, adjust `EPOCHS` to 20 (default setting).
+
 
 ### Training Modules
 
@@ -79,6 +84,8 @@ Each epoch takes around 6 hours, and the total training may last 6-7 days. Check
 
 - Due to the superior processing power of the RTX 4090 compared to the RTX 3090, the first PC is used for planning to leverage faster computation and manage larger data loads.
           
+  <img width="622" alt="Screenshot 2024-09-05 at 5 15 48 PM" src="https://github.com/user-attachments/assets/d6f0033d-780d-41d9-a9a0-bf7f06f8ed7a">
+  
 - Adjust `GPUS` to `[0]` and `BATCHSIZE` to 1 in `ST-P3/stp3/configs/nuscenes/Planning.yml` to resolve CUDA out-of-memory errors.
 
     ```bash
