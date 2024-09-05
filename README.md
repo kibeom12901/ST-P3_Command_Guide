@@ -1,12 +1,12 @@
 # ST-P3 Command Guide
 
 ### Initial Setup
-- **1.** Clone the Repository:
+**1.** Clone the Repository:
           ```bash
           git clone https://github.com/OpenDriveLab/ST-P3.git
           ```
-- **2.**  Create and Activate Conda Environment:
-- Create a Conda environment named `st-p3`:
+**2.**  Create and Activate Conda Environment:
+  - Create a Conda environment named `st-p3`:
     ```bash
     conda env create -f environment.yml -n st-p3
     ```
@@ -15,7 +15,7 @@
     conda activate st-p3
     ```
 
-- **3.**  Prepare Data Directory:
+**3.**  Prepare Data Directory:
   - Create a directory path `ST-P3/data/Nuscenes`.
   - Download the following data from nuscenes.org/download into the Nuscenes directory:
     - Metadata [US, Asia] (0.43 GB)
