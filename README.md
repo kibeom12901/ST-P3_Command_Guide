@@ -15,7 +15,9 @@ conda activate st-p3
 
 # Prepare Data Directory:
 
-# Create a directory path `ST-P3/data/Nuscenes`.
+# Create a directory path ST-P3/data/Nuscenes.
+mkdir -p ST-P3/data/Nuscenes
+
 # Download the following data from nuscenes.org/download into the Nuscenes directory:
 # - Metadata [US, Asia] (0.43 GB)
 # - File blobs of 85 scenes, parts 1-10 [US, Asia] (totals ~284.17 GB)
@@ -25,9 +27,9 @@ conda activate st-p3
 
 # Modify Configuration Files:
 
-# Navigate to ST-P3/stp3/configs/nuscenes/Perception.yml
-# Adjust the GPUs configuration from GPUS: [0,1,2,3,4] to GPUS: [0] due to using a single GPU (RTX 4090)
-# Optionally, adjust EPOCHS to 20 (default setting)
+# Navigate to ST-P3/stp3/configs/nuscenes/Perception.yml and adjust the following:
+# Adjust the GPUs configuration from GPUS: [0,1,2,3,4] to GPUS: [0] due to using a single GPU (RTX 4090).
+# Optionally, adjust EPOCHS to 20 (default setting).
 
 # Training Modules
 
@@ -43,7 +45,8 @@ bash scripts/train_plan.sh ${configs} ${dataroot} ${pretrained}
 # Execute Perception Training:
 bash scripts/train_perceive.sh stp3/configs/nuscenes/Perception.yml data/Nuscenes
 
-# Each epoch takes around 6 hours, and the total training may last 6-7 days. Checkpoints are saved in ST-P3/tensorboard_logs.
+# Each epoch takes around 6 hours, and the total training may last 6-7 days.
+# Checkpoints are saved in ST-P3/tensorboard_logs.
 
 # Set Up on a Second PC for Efficiency and Faster Processing
 
