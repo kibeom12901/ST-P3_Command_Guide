@@ -5,6 +5,7 @@
           ```bash
           git clone https://github.com/OpenDriveLab/ST-P3.git
           ```
+
 **2.**  Create and Activate Conda Environment:
   - Create a Conda environment named `st-p3`:
     ```bash
