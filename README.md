@@ -105,14 +105,14 @@ Planning takes approximately one week, and the results are critical for subseque
 - Executed command:
 
     ```bash
-    bash scripts/eval_plan.sh ST-P3/tensorboard_logs/17September2024at18_15_56KST_SimulationPC_Prediction data/Nuscenes
+    bash scripts/eval_plan.sh ST-P3/tensorboard_logs/17September2024at18_15_56KST_SimulationPC_Perception/default/version_0/checkpoints/last.ckpt data/Nuscenes
     ```
 
 Evaluation typically takes up to 1 hour, displaying results on the terminal and saving HD maps to `ST-P3/imgs`.
 
-### Running Prediction Module
+### Running Prediction Module With the Second PC
 
-**1.** Execute Prediction Training:
+**1.** Execute Prediction Training with the Perception checkpoint:
 
 - Adjust the GPUs configuration from `GPUS: [0,1,2,3,4]` to `GPUS: [0]` in the configuration file.
 
@@ -120,10 +120,19 @@ Evaluation typically takes up to 1 hour, displaying results on the terminal and 
     bash scripts/train_prediction.sh stp3/configs/nuscenes/Prediction.yml data/Nuscenes ST-P3/tensorboard_logs/30August2024at13_22_38KST_SimulationPC_Perception/default/version_0/checkpoints/last.ckpt
     ```
 
-This process also takes about a week.
+This process takes about a week.
 
 **2.** Planning with Prediction Results:
 
+- Executed command:
+  
+    ```bash
+    bash scripts/train_plan.sh stp3/configs/nuscenes/Planning.yml data/Nuscenes ST-P3/tensorboard_logs/17September2024at18_15_56KST_SimulationPC_Prediction/default/version_0/checkpoints/last.ckpt
+    ```
+
+This process also takes about a week.
+
+**3.** Run Evaluation:
 - Recommended:
 
     ```bash
@@ -133,7 +142,7 @@ This process also takes about a week.
 - Executed command:
 
     ```bash
-    bash scripts/eval_plan.sh ST-P3/tensorboard_logs/17September2024at18_15_56KST_SimulationPC_Prediction data/Nuscenes
+    bash scripts/eval_plan.sh ST-P3/tensorboard_logs/23September2024at12_05_30KST_SimulationPC_Planning/default/version_0/checkpoints/last.ckpt data/Nuscenes
     ```
 
 Results and HD maps will be available in directories like `ST-P3/imgs`.
