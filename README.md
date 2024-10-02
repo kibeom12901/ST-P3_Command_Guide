@@ -146,3 +146,29 @@ This process also takes about a week.
     ```
 
 Results and HD maps will be available in directories like `ST-P3/imgs`.
+
+### Further Interest or Debugging
+
+For those interested in diving deeper into the process or debugging potential issues, follow these steps:
+
+**1.** Check TensorBoard logs:
+- Install TensorBoard (if not already installed):
+    ```bash
+    pip install tensorboard
+    ```
+- Navigate to the directory containing the events.out.tfevents file(e.g tensorboard_logs/17September2024at18_15_56KST_SimulationPC_Prediction/default/version_0):
+    ```bash
+    cd ST-P3/tensorboard_logs
+    tensorboard --logdir=./
+    ```
+- Open the provided link (usually http://localhost:6006/) in your web browser to monitor metrics like training loss and accuracy.
+
+- Here are the examples of the graphs showing the training process:
+
+<img width="436" alt="Screenshot 2024-10-02 at 3 58 06 PM" src="https://github.com/user-attachments/assets/e80dce49-b585-441f-8cd0-ee00c70c2eae">
+
+<img width="431" alt="Screenshot 2024-10-02 at 3 58 14 PM" src="https://github.com/user-attachments/assets/efe9734d-c3c7-4c83-a5c8-de5a93de6137">
+
+<img width="435" alt="Screenshot 2024-10-02 at 3 58 27 PM" src="https://github.com/user-attachments/assets/40f50d0b-9723-4834-9fe9-aab024e06a01">
+
+<img width="418" alt="Screenshot 2024-10-02 at 4 05 43 PM" src="https://github.com/user-attachments/assets/5b971f86-d0b7-4e01-a028-1fc734cf56de">
